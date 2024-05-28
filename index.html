@@ -2,202 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Webpage</title>
+    <title>Document</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        *{
+            /* 初始化 */
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav {
+        body{
+            /* 100% 窗口高度 */
+            min-height: 100vh;
+            width: 100%;
+            /* 弹性布局 水平+垂直居中 */
             display: flex;
             justify-content: center;
-            background-color: #444;
-            padding: 10px 0;
+            align-items: center;
+            background-color: #06252e;
         }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
+        .box{
+            width: 100%;
+            /* 投影效果 */
+            -webkit-box-reflect:below 1px linear-gradient(transparent, rgba(0,0,0,0.2));
+        }
+        h1{
+            color: #fff;
+            font-size: 96px;
+            /* 字间距 */
+            letter-spacing: 15px;
+            /* 转大写 */
             text-transform: uppercase;
-            transition: background-color 0.3s ease;
-        }
-        nav a:hover {
-            background-color: #555;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-        }
-        .intro, .about, .projects, .contact {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .intro h1 {
-            margin: 0;
-            font-size: 2.5em;
             text-align: center;
+            line-height: 76px;
+            outline: none;
+            /* 自定义属性 --c,可通过 var 函数对其调用 */
+            --c:lightseagreen;
+            /* 调用自定义属性--c，设置文字阴影（发光效果） */
+            text-shadow: 0 0 10px var(--c),
+            0 0 20px var(--c),
+            0 0 40px var(--c),
+            0 0 80px var(--c),
+            0 0 160px var(--c);
+            /* 执行动画：动画名 时长 线性的 无限次播放 */
+            animation: animate 5s linear infinite;
         }
-        .intro p {
-            font-size: 1.2em;
-            text-align: center;
-        }
-        .about img {
-            float: left;
-            margin-right: 20px;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-        }
-        .projects h2, .contact h2 {
-            margin-top: 0;
-        }
-        .project-item {
-            margin-bottom: 10px;
-        }
-        .project-item h3 {
-            margin: 0;
-        }
-        .contact form {
-            display: flex;
-            flex-direction: column;
-        }
-        .contact label {
-            margin-bottom: 5px;
-        }
-        .contact input, .contact textarea {
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .contact button {
-            padding: 10px;
-            border: none;
-            background-color: #333;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .contact button:hover {
-            background-color: #555;
-        }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: white;
-        }
-        .snowflake {
-            position: fixed;
-            top: -10px;
-            z-index: 9999;
-            user-select: none;
-            pointer-events: none;
-            color: white;
-            font-size: 1em;
-            animation: fall linear infinite;
-        }
-        @keyframes fall {
-            to {
-                transform: translateY(100vh);
+        /* 定义动画 */
+        @keyframes animate{
+            to{
+                /* 色相旋转过滤镜（设置度数可改变颜色） */
+                filter: hue-rotate(360deg);
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>My Personal Webpage</h1>
-    </header>
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="container">
-        <section class="intro">
-            <h1>Welcome!</h1>
-            <p>This is my personal webpage where you can learn more about me and my work.</p>
-        </section>
-        <section id="about" class="about">
-            <h2>About Me</h2>
-            <img src="IMG_0309.JPG" alt="Your Photo">
-            <p>Hello! I'm Yangyue, everthing is ok!.</p>
-        </section>
-        <section id="projects" class="projects">
-            <h2>Projects</h2>
-            <div class="project-item">
-                <h3>Project 1</h3>
-                <p>Description of project 1. <a href="#">Learn more</a></p>
-            </div>
-            <div class="project-item">
-                <h3>Project 2</h3>
-                <p>Description of project 2. <a href="#">Learn more</a></p>
-            </div>
-            <div class="project-item">
-                <h3>Project 3</h3>
-                <p>Description of project 3. <a href="#">Learn more</a></p>
-            </div>
-        </section>
-        <section id="contact" class="contact">
-            <h2>Contact Me</h2>
-            <form action="#" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-            <p>Or find me on:</p>
-            <p>
-                <a href="#">QQ</a> | 
-                <a href="#">GitHub</a> | 
-                <a href="#">Wechat</a>
-            </p>
-        </section>
+    <div class="box">
+        <h1 contenteditable="true">hello</h1>
     </div>
-    <footer>
-        <p>&copy; 2024 My Personal Webpage. All rights reserved.</p>
-    </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const snowflakes = [];
-            const createSnowflake = () => {
-                const snowflake = document.createElement('div');
-                snowflake.classList.add('snowflake');
-                snowflake.textContent = '❄️';
-                snowflake.style.left = `${Math.random() * window.innerWidth}px`;
-                snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
-                snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
-                document.body.appendChild(snowflake);
-                snowflakes.push(snowflake);
-                setTimeout(() => {
-                    snowflake.remove();
-                }, (Math.random() * 3 + 2) * 1000);
-            };
-            setInterval(createSnowflake, 100);
-        });
-    </script>
 </body>
 </html>
