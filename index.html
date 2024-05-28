@@ -4,7 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whack-a-Mole Game</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .hole {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: #8B4513;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hole::before {
+            content: '';
+            display: block;
+            padding-top: 100%;
+        }
+
+        .mole {
+            width: 60px;
+            height: 60px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: none;
+        }
+
+        .score-board {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
     <h1>Whack-a-Mole Game</h1>
@@ -19,6 +67,52 @@
     <div class="score-board">
         Score: <span id="score">0</span>
     </div>
-    <script src="script.js"></script>
+    <script>
+        let score = 0;
+        const holes = document.querySelectorAll('.hole');
+        const scoreBoard = document.getElementById('score');
+
+        function randomTime(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
+        }
+
+        function randomHole(holes) {
+            const idx = Math.floor(Math.random() * holes.length);
+            const hole = holes[idx];
+            return hole;
+        }
+
+        function showMole() {
+            const time = randomTime(500, 1000);
+            const hole = randomHole(holes);
+            const mole = document.createElement('div');
+            mole.classList.add('mole');
+            hole.appendChild(mole);
+            mole.style.display = 'block';
+
+            mole.addEventListener('click', () => {
+                score++;
+                scoreBoard.textContent = score;
+                mole.style.display = 'none';
+                hole.removeChild(mole);
+            });
+
+            setTimeout(() => {
+                mole.style.display = 'none';
+                if (hole.contains(mole)) {
+                    hole.removeChild(mole);
+                }
+                if (score < 10) {
+                    showMole();
+                } else {
+                    alert('Game over! Your score is ' + score);
+                    score = 0;
+                    scoreBoard.textContent = score;
+                }
+            }, time);
+        }
+
+        showMole();
+    </script>
 </body>
 </html>
