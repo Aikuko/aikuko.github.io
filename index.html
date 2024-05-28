@@ -1,118 +1,209 @@
-<!DOCTYPE html>
+<!-- Design By haiyong.site -->
+<!DOCTYPE html> 
 <html lang="en">
+  <title>海拥 | 简单的javascript模拟时钟</title>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whack-a-Mole Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<link rel="icon" href="https://haiyong.site/img/favicon.png" sizes="192x192" />
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f0f0f0;
-        }
+ html {
+  background: #282828;
+  text-align: center;
+  font-size: 10px;
+}
 
-        h1 {
-            margin-top: 20px;
-        }
+body {
+  margin: 0;
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+}
 
-        .game-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 7px solid #282828;
+  box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
+                inset 4px 4px 10px rgba(0,0,0,0.5),
+                inset -4px -4px 10px rgba(67,67,67,0.5),
+                4px 4px 10px rgba(0,0,0,0.3);
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+ 
+}
 
-        .hole {
-            width: 100px;
-            height: 100px;
-            margin: 10px;
-            background-color: #8B4513;
-            position: relative;
-            cursor: pointer;
-        }
+.outer-clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background: #282828;
+  
+ 
+  overflow: hidden;
+}
 
-        .hole::before {
-            content: '';
-            display: block;
-            padding-top: 100%;
-        }
+.outer-clock-face::after {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
 
-        .mole {
-            width: 60px;
-            height: 60px;
-            background-color: black;
-            border-radius: 50%;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            display: none;
-        }
+.outer-clock-face::before,
+.outer-clock-face::after,
+.outer-clock-face .marking{
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background: #1df52f;
+  z-index: 0;
+  left: 49%;
+}
 
-        .score-board {
-            margin-top: 20px;
-            font-size: 24px;
-        }
+.outer-clock-face .marking {
+  background: #bdbdcb;
+  width: 3px;
+}
+
+.outer-clock-face .marking.marking-one {
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  transform: rotate(30deg)
+}
+
+.outer-clock-face .marking.marking-two {
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  transform: rotate(60deg)
+}
+
+.outer-clock-face .marking.marking-three {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  transform: rotate(120deg)
+}
+
+.outer-clock-face .marking.marking-four {
+  -webkit-transform: rotate(150deg);
+  -moz-transform: rotate(150deg);
+  transform: rotate(150deg)
+}
+
+.inner-clock-face {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: #282828;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.inner-clock-face::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 18px;
+  margin-left: -9px;
+  margin-top: -6px;
+  background: #4d4b63;
+  z-index: 11;
+}
+
+.hand {
+  width: 50%;
+  right: 50%;
+  height: 6px;
+  background: #61afff;
+  position: absolute;
+  top: 50%;
+  border-radius: 6px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hand.hour-hand {
+  width: 30%;
+  z-index: 3;
+}
+
+.hand.min-hand {
+  height: 3px;
+  z-index: 10;
+  width: 40%;
+}
+
+.hand.second-hand {
+  background: #ee791a;
+  width: 45%;
+  height: 2px;
+}
     </style>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?a9430a37066911650e26adadcc42798a";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
 </head>
 <body>
-    <h1>Whack-a-Mole Game</h1>
-    <div class="game-container">
-        <div class="hole" id="hole1"></div>
-        <div class="hole" id="hole2"></div>
-        <div class="hole" id="hole3"></div>
-        <div class="hole" id="hole4"></div>
-        <div class="hole" id="hole5"></div>
-        <div class="hole" id="hole6"></div>
-    </div>
-    <div class="score-board">
-        Score: <span id="score">0</span>
-    </div>
-    <script>
-        let score = 0;
-        const holes = document.querySelectorAll('.hole');
-        const scoreBoard = document.getElementById('score');
+    <div class="clock">
+        <div class="outer-clock-face">
+          <div class="marking marking-one"></div>
+          <div class="marking marking-two"></div>
+          <div class="marking marking-three"></div>
+          <div class="marking marking-four"></div>
+          <div class="inner-clock-face">
+            <div class="hand hour-hand"></div>
+            <div class="hand min-hand"></div>
+            <div class="hand second-hand"></div>
+          </div>
+        </div>
+      </div>
+  <script>
+ 
+ const secondHand = document.querySelector('.second-hand');
+const minsHand = document.querySelector('.min-hand');
+const hourHand = document.querySelector('.hour-hand');
 
-        function randomTime(min, max) {
-            return Math.round(Math.random() * (max - min) + min);
-        }
+function setDate() {
+  const now = new Date();
 
-        function randomHole(holes) {
-            const idx = Math.floor(Math.random() * holes.length);
-            const hole = holes[idx];
-            return hole;
-        }
+  const seconds = now.getSeconds();
+  const secondsDegrees = ((seconds / 60) * 360) + 90;
+  secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
-        function showMole() {
-            const time = randomTime(500, 1000);
-            const hole = randomHole(holes);
-            const mole = document.createElement('div');
-            mole.classList.add('mole');
-            hole.appendChild(mole);
-            mole.style.display = 'block';
+  const mins = now.getMinutes();
+  const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
+  minsHand.style.transform = `rotate(${minsDegrees}deg)`;
 
-            mole.addEventListener('click', () => {
-                score++;
-                scoreBoard.textContent = score;
-                mole.style.display = 'none';
-                hole.removeChild(mole);
-            });
+  const hour = now.getHours();
+  const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
+  hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+}
 
-            setTimeout(() => {
-                mole.style.display = 'none';
-                if (hole.contains(mole)) {
-                    hole.removeChild(mole);
-                }
-                if (score < 10) {
-                    showMole();
-                } else {
-                    alert('Game over! Your score is ' + score);
-                    score = 0;
-                    scoreBoard.textContent = score;
-                }
-            }, time);
-        }
+setInterval(setDate, 1000);
 
-        showMole();
-    </script>
+setDate();
+  </script>
+
 </body>
 </html>
+
