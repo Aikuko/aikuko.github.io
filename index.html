@@ -1,209 +1,203 @@
-<!-- Design By haiyong.site -->
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-  <title>模拟时钟</title>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	<link rel="icon" href="https://haiyong.site/img/favicon.png" sizes="192x192" />
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Webpage</title>
     <style>
- html {
-  background: #282828;
-  text-align: center;
-  font-size: 10px;
-}
-
-body {
-  margin: 0;
-  font-size: 2rem;
-  display: flex;
-  flex: 1;
-  min-height: 100vh;
-  align-items: center;
-}
-
-.clock {
-  width: 30rem;
-  height: 30rem;
-  border: 7px solid #282828;
-  box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
-                inset 4px 4px 10px rgba(0,0,0,0.5),
-                inset -4px -4px 10px rgba(67,67,67,0.5),
-                4px 4px 10px rgba(0,0,0,0.3);
-  border-radius: 50%;
-  margin: 50px auto;
-  position: relative;
-  padding: 2rem;
- 
-}
-
-.outer-clock-face {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  background: #282828;
-  
- 
-  overflow: hidden;
-}
-
-.outer-clock-face::after {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  transform: rotate(90deg)
-}
-
-.outer-clock-face::before,
-.outer-clock-face::after,
-.outer-clock-face .marking{
-  content: '';
-  position: absolute;
-  width: 5px;
-  height: 100%;
-  background: #1df52f;
-  z-index: 0;
-  left: 49%;
-}
-
-.outer-clock-face .marking {
-  background: #bdbdcb;
-  width: 3px;
-}
-
-.outer-clock-face .marking.marking-one {
-  -webkit-transform: rotate(30deg);
-  -moz-transform: rotate(30deg);
-  transform: rotate(30deg)
-}
-
-.outer-clock-face .marking.marking-two {
-  -webkit-transform: rotate(60deg);
-  -moz-transform: rotate(60deg);
-  transform: rotate(60deg)
-}
-
-.outer-clock-face .marking.marking-three {
-  -webkit-transform: rotate(120deg);
-  -moz-transform: rotate(120deg);
-  transform: rotate(120deg)
-}
-
-.outer-clock-face .marking.marking-four {
-  -webkit-transform: rotate(150deg);
-  -moz-transform: rotate(150deg);
-  transform: rotate(150deg)
-}
-
-.inner-clock-face {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  width: 80%;
-  height: 80%;
-  background: #282828;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  border-radius: 100%;
-  z-index: 1;
-}
-
-.inner-clock-face::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 16px;
-  height: 16px;
-  border-radius: 18px;
-  margin-left: -9px;
-  margin-top: -6px;
-  background: #4d4b63;
-  z-index: 11;
-}
-
-.hand {
-  width: 50%;
-  right: 50%;
-  height: 6px;
-  background: #61afff;
-  position: absolute;
-  top: 50%;
-  border-radius: 6px;
-  transform-origin: 100%;
-  transform: rotate(90deg);
-  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-}
-
-.hand.hour-hand {
-  width: 30%;
-  z-index: 3;
-}
-
-.hand.min-hand {
-  height: 3px;
-  z-index: 10;
-  width: 40%;
-}
-
-.hand.second-hand {
-  background: #ee791a;
-  width: 45%;
-  height: 2px;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        .intro, .about, .projects, .contact {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .intro h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-align: center;
+        }
+        .intro p {
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .about img {
+            float: left;
+            margin-right: 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .projects h2, .contact h2 {
+            margin-top: 0;
+        }
+        .project-item {
+            margin-bottom: 10px;
+        }
+        .project-item h3 {
+            margin: 0;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact label {
+            margin-bottom: 5px;
+        }
+        .contact input, .contact textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact button {
+            padding: 10px;
+            border: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact button:hover {
+            background-color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: white;
+        }
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 9999;
+            user-select: none;
+            pointer-events: none;
+            color: white;
+            font-size: 1em;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
     </style>
-	<script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "https://hm.baidu.com/hm.js?a9430a37066911650e26adadcc42798a";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
 </head>
 <body>
-    <div class="clock">
-        <div class="outer-clock-face">
-          <div class="marking marking-one"></div>
-          <div class="marking marking-two"></div>
-          <div class="marking marking-three"></div>
-          <div class="marking marking-four"></div>
-          <div class="inner-clock-face">
-            <div class="hand hour-hand"></div>
-            <div class="hand min-hand"></div>
-            <div class="hand second-hand"></div>
-          </div>
-        </div>
-      </div>
-  <script>
- 
- const secondHand = document.querySelector('.second-hand');
-const minsHand = document.querySelector('.min-hand');
-const hourHand = document.querySelector('.hour-hand');
-
-function setDate() {
-  const now = new Date();
-
-  const seconds = now.getSeconds();
-  const secondsDegrees = ((seconds / 60) * 360) + 90;
-  secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
-
-  const mins = now.getMinutes();
-  const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
-  minsHand.style.transform = `rotate(${minsDegrees}deg)`;
-
-  const hour = now.getHours();
-  const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
-  hourHand.style.transform = `rotate(${hourDegrees}deg)`;
-}
-
-setInterval(setDate, 1000);
-
-setDate();
-  </script>
-
+    <header>
+        <h1>My Personal Webpage</h1>
+    </header>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <section class="intro">
+            <h1>Welcome!</h1>
+            <p>This is my personal webpage where you can learn more about me and my work.</p>
+        </section>
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <img src="234.png" alt="Your Photo">
+            <p>Hello! I'm Yangyue, a passionate developer with skills in HTML, CSS, JavaScript, and more. I love creating beautiful and functional web applications. In my free time, I enjoy hiking, reading, and learning new technologies.</p>
+        </section>
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <h3>Project 1</h3>
+                <p>Description of project 1. <a href="#">Learn more</a></p>
+            </div>
+            <div class="project-item">
+                <h3>Project 2</h3>
+                <p>Description of project 2. <a href="#">Learn more</a></p>
+            </div>
+            <div class="project-item">
+                <h3>Project 3</h3>
+                <p>Description of project 3. <a href="#">Learn more</a></p>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <p>Or find me on:</p>
+            <p>
+                <a href="#">LinkedIn</a> | 
+                <a href="#">GitHub</a> | 
+                <a href="#">Twitter</a>
+            </p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 My Personal Webpage. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const snowflakes = [];
+            const createSnowflake = () => {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.textContent = '❄️';
+                snowflake.style.left = `${Math.random() * window.innerWidth}px`;
+                snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+                document.body.appendChild(snowflake);
+                snowflakes.push(snowflake);
+                setTimeout(() => {
+                    snowflake.remove();
+                }, (Math.random() * 3 + 2) * 1000);
+            };
+            setInterval(createSnowflake, 100);
+        });
+    </script>
 </body>
 </html>
-
