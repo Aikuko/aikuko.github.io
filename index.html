@@ -1,64 +1,209 @@
-4<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Single Photo Wall with Snowfall Effect</title>
     <style>
-        *{
-            /* 初始化 */
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-        body{
-            /* 100% 窗口高度 */
-            min-height: 100vh;
-            width: 100%;
-            /* 弹性布局 水平+垂直居中 */
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #06252e;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            animation: gradient 10s ease infinite;
+            overflow: hidden;
         }
-        .box{
+
+        @keyframes gradient {
+            0% {
+                background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            }
+            50% {
+                background: linear-gradient(135deg, #6a11cb, #2575fc);
+            }
+            100% {
+                background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            }
+        }
+
+        .photo-wall {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 400px;
+            position: relative;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-wall:hover {
+            transform: scale(1.05);
+        }
+
+        .photo-item {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            /* 投影效果 */
-            -webkit-box-reflect:below 1px linear-gradient(transparent, rgba(0,0,0,0.2));
+            height: 100%;
+            transition: transform 0.5s ease;
         }
-        h1{
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .photo-wall:hover .photo-item {
+            transform: scale(1.1);
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
             color: #fff;
-            font-size: 96px;
-            /* 字间距 */
-            letter-spacing: 15px;
-            /* 转大写 */
-            text-transform: uppercase;
+            padding: 10px;
             text-align: center;
-            line-height: 76px;
-            outline: none;
-            /* 自定义属性 --c,可通过 var 函数对其调用 */
-            --c:lightseagreen;
-            /* 调用自定义属性--c，设置文字阴影（发光效果） */
-            text-shadow: 0 0 10px var(--c),
-            0 0 20px var(--c),
-            0 0 40px var(--c),
-            0 0 80px var(--c),
-            0 0 160px var(--c);
-            /* 执行动画：动画名 时长 线性的 无限次播放 */
-            animation: animate 5s linear infinite;
+            font-size: 18px;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        /* 定义动画 */
-        @keyframes animate{
-            to{
-                /* 色相旋转过滤镜（设置度数可改变颜色） */
-                filter: hue-rotate(360deg);
+
+        .photo-wall:hover .photo-caption {
+            opacity: 1;
+        }
+
+        .modal {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #000;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            pointer-events: none;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
             }
         }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1 contenteditable="true">李正航</h1>
+    <div class="photo-wall" id="photoWall">
+        <div class="photo-item">
+            <img src="2671716958576_.pic.jpg" alt="Beautiful Photo">
+            <div class="photo-caption">The Real Man</div>
+        </div>
     </div>
+
+    <div class="modal" id="photoModal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <img id="modalImage" src="" alt="Enlarged Photo">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const photoWall = document.getElementById('photoWall');
+            const modal = document.getElementById('photoModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeModal = document.getElementById('closeModal');
+
+            photoWall.addEventListener('click', function() {
+                const imgSrc = this.querySelector('img').src;
+                modalImage.src = imgSrc;
+                modal.style.display = 'flex';
+            });
+
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Create snowflakes
+            for (let i = 0; i < 100; i++) {
+                createSnowflake();
+            }
+
+            function createSnowflake() {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.style.left = `${Math.random() * 100}vw`;
+                snowflake.style.width = `${Math.random() * 10 + 5}px`;
+                snowflake.style.height = snowflake.style.width;
+                snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                snowflake.style.animationDelay = `${Math.random() * 5}s`;
+                document.body.appendChild(snowflake);
+
+                snowflake.addEventListener('animationend', function() {
+                    this.remove();
+                    createSnowflake();
+                });
+            }
+        });
+    </script>
 </body>
 </html>
