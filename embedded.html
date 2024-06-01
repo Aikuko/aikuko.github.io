@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Hello Kitty</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fce4ec;
+            margin: 0;
+        }
+
+        .kitty {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        .kitty .head {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            border: 5px solid #000;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .kitty .ear {
+            width: 60px;
+            height: 80px;
+            background-color: #fff;
+            border: 5px solid #000;
+            position: absolute;
+            top: -30px;
+            border-radius: 50% 50% 0 0;
+            z-index: -1;
+        }
+
+        .kitty .ear.left {
+            left: 20px;
+            transform: rotate(-20deg);
+        }
+
+        .kitty .ear.right {
+            right: 20px;
+            transform: rotate(20deg);
+        }
+
+        .kitty .eye {
+            width: 25px;
+            height: 35px;
+            background-color: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 70px;
+            transition: all 0.3s ease;
+        }
+
+        .kitty .eye.left {
+            left: 50px;
+        }
+
+        .kitty .eye.right {
+            right: 50px;
+        }
+
+        .kitty .nose {
+            width: 15px;
+            height: 12px;
+            background-color: #f66;
+            position: absolute;
+            top: 110px;
+            left: calc(50% - 7.5px);
+            border-radius: 50%;
+        }
+
+        .kitty .whiskers {
+            position: absolute;
+            top: 120px;
+            width: 150px;
+            height: 2px;
+            background-color: #000;
+        }
+
+        .kitty .whiskers.left {
+            left: 0;
+            transform: rotate(10deg);
+        }
+
+        .kitty .whiskers.right {
+            right: 0;
+            transform: rotate(-10deg);
+        }
+
+        .kitty .bow {
+            width: 60px;
+            height: 30px;
+            background-color: #ff69b4;
+            position: absolute;
+            top: 40px;
+            left: 130px;
+            border-radius: 50%;
+            transform: rotate(-30deg);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .kitty .bow::before,
+        .kitty .bow::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background-color: #ff69b4;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .kitty .bow::before {
+            left: -20px;
+            top: -10px;
+        }
+
+        .kitty .bow::after {
+            right: -20px;
+            top: -10px;
+        }
+
+        .kitty .mouth {
+            width: 30px;
+            height: 20px;
+            background-color: #000;
+            position: absolute;
+            top: 130px;
+            left: calc(50% - 15px);
+            border-radius: 0 0 50% 50%;
+        }
+
+        .kitty:hover .head {
+            animation: shake 0.5s;
+        }
+
+        .kitty:hover .eye {
+            height: 15px;
+        }
+
+        .kitty:hover .bow {
+            background-color: #ff1493;
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            75% {
+                transform: translateX(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="kitty">
+        <div class="head">
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
+            <div class="whiskers left"></div>
+            <div class="whiskers right"></div>
+            <div class="bow"></div>
+        </div>
+    </div>
+
+    <script>
+        // Add any JavaScript interactions if needed
+    </script>
+</body>
+</html>
