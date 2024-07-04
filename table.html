@@ -1,5 +1,150 @@
-<script>
-<!--
-document.write(unescape("%3C%21doctype%20html%3E%0A%3Chtml%3E%0A%0A%3Chead%3E%0A%20%20%20%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%20%20%20%3Cmeta%20http-equiv%3D%22X-UA-Compatible%22%20content%3D%22IE%3Dedge%22%3E%0A%20%20%20%20%3Cmeta%20name%3D%22renderer%22%20content%3D%22webkit%22%3E%0A%20%20%20%20%3Ctitle%3E%u5FD7%u613F%u8005%u7533%u8BF7%u8868%20-%20%u7115%u53D1%u82B1%u857E%u8BA1%u5212%3C/title%3E%0A%20%20%20%20%3Clink%20rel%3D%22icon%22%20href%3D%22pc/%u56E2%u961F%u6807%u5FD7.png%22%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22css/style.css%22%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20%20%20body%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-family%3A%20%27Arial%27%2C%20sans-serif%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20%23f9f9f9%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23333%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%200%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.container%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20max-width%3A%20800px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%2050px%20auto%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box-shadow%3A%200%202px%2010px%20rgba%280%2C%200%2C%200%2C%200.1%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%2010px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.logo%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20top%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20left%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.logo%20img%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20max-width%3A%20100px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%2010px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20h1%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23007bff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2024px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20form%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20flex-direction%3A%20column%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-top%3A%20100px%3B%20/*%20Adjusted%20to%20add%20space%20for%20logo%20*/%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20label%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%205px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-weight%3A%20bold%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20input%5Btype%3D%22text%22%5D%2C%0A%20%20%20%20%20%20%20%20input%5Btype%3D%22email%22%5D%2C%0A%20%20%20%20%20%20%20%20input%5Btype%3D%22tel%22%5D%2C%0A%20%20%20%20%20%20%20%20textarea%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2010px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%201px%20solid%20%23ddd%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%205px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2016px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20textarea%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20resize%3A%20vertical%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20input%5Btype%3D%22button%22%5D%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2015px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20%23007bff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%20none%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%205px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2018px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20cursor%3A%20pointer%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transition%3A%20background-color%200.3s%2C%20transform%200.3s%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20input%5Btype%3D%22button%22%5D%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20%230056b3%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%28-2px%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%3C/style%3E%0A%3C/head%3E%0A%0A%3Cbody%3E%0A%20%20%20%20%3Cdiv%20class%3D%22container%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22logo%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22pc/%u56E2%u961F%u6807%u5FD7.png%22%20alt%3D%22%u7115%u53D1%u82B1%u857E%u8BA1%u5212%22%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Ch1%3E%u5FD7%u613F%u8005%u7533%u8BF7%u8868%3C/h1%3E%0A%20%20%20%20%20%20%20%20%3Cform%20id%3D%22volunteerForm%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22name%22%3E%u59D3%u540D%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20id%3D%22name%22%20name%3D%22name%22%20required%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22email%22%3E%u7535%u5B50%u90AE%u4EF6%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22email%22%20id%3D%22email%22%20name%3D%22email%22%20required%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22phone%22%3E%u7535%u8BDD%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22tel%22%20id%3D%22phone%22%20name%3D%22phone%22%20required%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22address%22%3E%u5730%u5740%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22text%22%20id%3D%22address%22%20name%3D%22address%22%20required%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22skills%22%3E%u76F8%u5173%u6280%u80FD%u6216%u7ECF%u9A8C%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20id%3D%22skills%22%20name%3D%22skills%22%20rows%3D%224%22%20required%3E%3C/textarea%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20for%3D%22availability%22%3E%u53EF%u7528%u65F6%u95F4%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20id%3D%22availability%22%20name%3D%22availability%22%20rows%3D%222%22%20required%3E%3C/textarea%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22button%22%20id%3D%22downloadBtn%22%20value%3D%22%u4E0B%u8F7D%u7533%u8BF7%u8868%22%20onclick%3D%22downloadPDF%28%29%22%3E%0A%20%20%20%20%20%20%20%20%3C/form%3E%0A%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20%20%20async%20function%20downloadPDF%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20%7B%20jsPDF%20%7D%20%3D%20window.jspdf%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20doc%20%3D%20new%20jsPDF%28%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20downloadBtn%20%3D%20document.getElementById%28%27downloadBtn%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20downloadBtn.style.display%20%3D%20%27none%27%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20element%20%3D%20document.querySelector%28%27.container%27%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20//%20Use%20html2canvas%20to%20convert%20the%20HTML%20element%20to%20a%20canvas%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20canvas%20%3D%20await%20html2canvas%28element%2C%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20scale%3A%202%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20imgData%20%3D%20canvas.toDataURL%28%27image/png%27%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20//%20Add%20the%20image%20data%20to%20jsPDF%0A%20%20%20%20%20%20%20%20%20%20%20%20doc.addImage%28imgData%2C%20%27PNG%27%2C%2010%2C%2010%2C%20190%2C%200%29%3B%20//%20Adjust%20the%20width%20and%20height%20as%20needed%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20doc.save%28%27%u5FD7%u613F%u8005%u7533%u8BF7%u8868.pdf%27%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20downloadBtn.style.display%20%3D%20%27block%27%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%3C/script%3E%0A%3C/body%3E%0A%0A%3C/html%3E%0A"));
-//-->
-</script>
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>志愿者申请表 - 焕发花蕾计划</title>
+    <link rel="icon" href="pc/团队标志.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .logo img {
+            max-width: 100px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 100px; /* Adjusted to add space for logo */
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="button"] {
+            padding: 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="pc/团队标志.png" alt="焕发花蕾计划">
+        </div>
+        <h1>志愿者申请表</h1>
+        <form id="volunteerForm">
+            <label for="name">姓名</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">电子邮件</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">电话</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">地址</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="skills">相关技能或经验</label>
+            <textarea id="skills" name="skills" rows="4" required></textarea>
+
+            <label for="availability">可用时间</label>
+            <textarea id="availability" name="availability" rows="2" required></textarea>
+
+            <input type="button" id="downloadBtn" value="下载申请表" onclick="downloadPDF()">
+        </form>
+    </div>
+
+    <script>
+        async function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const downloadBtn = document.getElementById('downloadBtn');
+            downloadBtn.style.display = 'none';
+
+            const element = document.querySelector('.container');
+
+            // Use html2canvas to convert the HTML element to a canvas
+            const canvas = await html2canvas(element, {
+                scale: 2
+            });
+
+            const imgData = canvas.toDataURL('image/png');
+
+            // Add the image data to jsPDF
+            doc.addImage(imgData, 'PNG', 10, 10, 190, 0); // Adjust the width and height as needed
+
+            doc.save('志愿者申请表.pdf');
+
+            downloadBtn.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

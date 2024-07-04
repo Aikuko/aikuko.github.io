@@ -1,5 +1,268 @@
-<script>
-<!--
-document.write(unescape("%3C%21doctype%20html%3E%0A%3Chtml%3E%0A%0A%3Chead%3E%0A%20%20%20%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%20%20%20%3Cmeta%20http-equiv%3D%22X-UA-Compatible%22%20content%3D%22IE%3Dedge%22%3E%0A%20%20%20%20%3Cmeta%20name%3D%22renderer%22%20content%3D%22webkit%22%3E%0A%20%20%20%20%3Ctitle%3E%u8054%u7CFB%u6211%u4EEC%20-%20%u7115%u53D1%u82B1%u857E%u8BA1%u5212%3C/title%3E%0A%20%20%20%20%3Cmeta%20name%3D%22keywords%22%20content%3D%22%u597D%u516C%u76CA%u5E73%u53F0%2C%u8054%u7CFB%u6211%u4EEC%2C%u516C%u76CA%u9879%u76EE%22%20/%3E%0A%20%20%20%20%3Cmeta%20name%3D%22description%22%20content%3D%22%u901A%u8FC7%u4EE5%u4E0B%u65B9%u5F0F%u8054%u7CFB%u6211%u4EEC%uFF0C%u4E86%u89E3%u66F4%u591A%u5173%u4E8E%u7115%u53D1%u82B1%u857E%u8BA1%u5212%u7684%u4FE1%u606F%u3002%22%20/%3E%0A%20%20%20%20%3Clink%20rel%3D%22icon%22%20href%3D%22pc/%u56E2%u961F%u6807%u5FD7.png%22%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22css/swiper-3.4.1.min.css%22%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22css/style-abed1fd6a7.css%22%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22css/font_832923_hhm2dcj4n4s.css%22%3E%0A%20%20%20%20%3Cscript%20src%3D%22js/jquery.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22js/swiper-3.4.1.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22js/common.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20%20%20body%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-family%3A%20%27Arial%27%2C%20sans-serif%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20%23f4f4f9%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%200%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.content-box%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20%23ffffff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%201px%20solid%20%23e0e0e0%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2030px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%2030px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%208px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box-shadow%3A%200%204px%206px%20rgba%280%2C%200%2C%200%2C%200.1%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transition%3A%20transform%200.3s%2C%20box-shadow%200.3s%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.content-box%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20translateY%28-5px%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box-shadow%3A%200%208px%2016px%20rgba%280%2C%200%2C%200%2C%200.2%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20h1%2C%20h2%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23333%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-weight%3A%20600%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.logo-box%20img%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20740px%20%21important%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20height%3A%20154px%20%21important%7D%0A%0A%0A%0A%20%20%20%20%20%20%20%20.content%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2016px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20line-height%3A%201.8%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23555%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.content%20p%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%2015px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.content%20ul%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding-left%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.content%20ul%20li%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%2010px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20list-style-type%3A%20none%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.highlight%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23007bff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-weight%3A%20bold%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-decoration%3A%20none%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.highlight%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-decoration%3A%20underline%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20a%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23007bff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-decoration%3A%20none%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20a%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-decoration%3A%20underline%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.page-content%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2040px%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%2020px%200%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.container%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20max-width%3A%201200px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%20auto%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%200%2020px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.footer-copy%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20%23333%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2020px%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.footer-copy%20a%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23007bff%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-decoration%3A%20none%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.footer-copy%20a%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-decoration%3A%20underline%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.header-box%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2020px%200%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%0A%0A%20%20%20%20%20%20%20%20.nav%20ul.menu%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20list-style%3A%20none%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%200%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.nav%20ul.menu%20li%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-right%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.nav%20ul.menu%20li%20a%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23333%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-decoration%3A%20none%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-weight%3A%20600%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.nav%20ul.menu%20li%20a%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23007bff%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.nav%20ul.menu%20li.active%20a%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23007bff%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%3C/style%3E%0A%3C/head%3E%0A%0A%3Cbody%3E%0A%20%20%20%20%3Cdiv%20class%3D%22page-container%22%3E%0A%20%20%20%20%20%20%20%20%3C%21--%20%u5934%u90E8%20--%3E%0A%20%20%20%20%20%20%20%20%3Cheader%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22container%20header-box%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22logo-box%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22project.html%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22pc/%u8BA1%u5212.png%22%20alt%3D%22%u7115%u53D1%u82B1%u857E%u8BA1%u5212%22%20%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/a%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22right-menu%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-top-box%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22search%22%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%3E%3Ca%20href%3D%22%23/home/english/index.html%22%3E%3C/a%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22nav%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cul%20class%3D%22menu%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%20class%3D%22menu-item%20%22%3E%3Ca%20href%3D%22index.html%22%3E%u9996%u9875%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%20class%3D%22menu-item%20%22%3E%3Ca%20href%3D%22project.html%22%3E%u9879%u76EE%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%20class%3D%22menu-item%20%22%3E%3Ca%20href%3D%22partner.html%22%3E%u6211%u4EEC%u7684%u4F19%u4F34%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%20class%3D%22menu-item%20%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22%23/home/partner/publicOrg/id/1.html%22%3E%u5FD7%u613F%u8005%3C/a%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cul%20class%3D%22dropdown-menu%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Ca%20href%3D%22about%20volunteer.html%22%3E%u5173%u4E8E%u5FD7%u613F%u8005%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Ca%20href%3D%22become%20volunteer.html%22%3E%u6210%u4E3A%u5FD7%u613F%u8005%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%20class%3D%22menu-item%20active%20current%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22%23/home/about/index.html%22%3E%u5173%u4E8E%u6211%u4EEC%3C/a%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cul%20class%3D%22dropdown-menu%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Ca%20href%3D%22Platform.html%22%3E%u5E73%u53F0%u7B80%u4ECB%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Ca%20href%3D%22contact.html%22%3E%u8054%u7CFB%u6211%u4EEC%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3C/header%3E%0A%20%20%20%20%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%24%28%27.menu-item%27%29.on%28%27mouseover%27%2C%20function%20%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28this%29.children%28%27.dropdown-menu%27%29.stop%28%29.fadeIn%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28this%29.addClass%28%27active%27%29.siblings%28%29.removeClass%28%27active%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%24%28%27.menu-item%27%29.on%28%27mouseleave%27%2C%20function%20%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28this%29.children%28%27.dropdown-menu%27%29.stop%28%29.fadeOut%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28this%29.removeClass%28%27active%27%29.siblings%28%29.removeClass%28%27active%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%24%28%27.to-search%27%29.on%28%27click%27%2C%20function%20%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20keyword%20%3D%20%24%28%27input%5Btype%3Dsearch%5D%27%29.val%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20location.href%20%3D%20%22/home/search/index.html%3Fkeyword%3D%22%20+%20keyword%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%24%28%27%23toSearch%27%29.keydown%28function%20%28event%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28event.keyCode%20%3D%3D%2013%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20keyword%20%3D%20%24%28%27input%5Btype%3Dsearch%5D%27%29.val%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20location.href%20%3D%20%22/home/search/index.html%3Fkeyword%3D%22%20+%20keyword%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%3C/script%3E%0A%20%20%20%20%20%20%20%20%3C%21--%20/%u5934%u90E8%20--%3E%0A%0A%20%20%20%20%20%20%20%20%3C%21--%20%u4E3B%u4F53%20--%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22page-content%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22container%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22content-box%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch1%3E%u8054%u7CFB%u6211%u4EEC%3C/h1%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22content%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3E%u5982%u679C%u60A8%u5BF9%u6211%u4EEC%u7684%u9879%u76EE%u6709%u4EFB%u4F55%u7591%u95EE%u6216%u5EFA%u8BAE%uFF0C%u6B22%u8FCE%u901A%u8FC7%u4EE5%u4E0B%u65B9%u5F0F%u8054%u7CFB%u6211%u4EEC%u3002%u6211%u4EEC%u671F%u5F85%u4E0E%u60A8%u7684%u4EA4%u6D41%u4E0E%u5408%u4F5C%u3002%3C/p%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch2%3E%u8054%u7CFB%u65B9%u5F0F%3C/h2%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22content%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3E%u7535%u8BDD%uFF1A%3C/strong%3E1564061931%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3E%u90AE%u7BB1%uFF1A%3C/strong%3E%3Ca%20href%3D%22mailto%3Ayuey@gmail.com%22%3Eyuey@gmail.com%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Cstrong%3E%u5730%u5740%uFF1A%3C/strong%3E%u9526%u5DDE%u5E02%u677E%u5C71%u65B0%u533A%u79D1%u6280%u8DEF19%u53F7%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch2%3E%u793E%u4EA4%u5A92%u4F53%3C/h2%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22content%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3E%u5173%u6CE8%u6211%u4EEC%u7684%u793E%u4EA4%u5A92%u4F53%uFF0C%u4E86%u89E3%u6700%u65B0%u52A8%u6001%uFF1A%3C/p%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Ca%20href%3D%22%23%22%20class%3D%22highlight%22%3E%u5FAE%u4FE1%u516C%u4F17%u53F7%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Ca%20href%3D%22https%3A//v.douyin.com/i69wQo1a/%204@2.com%20%3A1pm%22%20class%3D%22highlight%22%3E%u6296%u97F3%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Ca%20href%3D%22https%3A//www.xiaohongshu.com/user/profile/5f7866be00000000010038e4%3Fxhsshare%3DCopyLink%26appuid%3D62846deb000000002102685a%26apptime%3D1720063874%22%20class%3D%22highlight%22%3E%u5C0F%u7EA2%u4E66%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3C%21--%20/%u4E3B%u4F53%20--%3E%0A%20%20%20%20%3C/div%3E%0A%20%20%20%20%3C%21--%20%u5E95%u90E8%20--%3E%0A%20%20%20%20%3Cfooter%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22pc/222.png%22%20alt%3D%22%u9526%u5DDE%u5E02%u5987%u8054%22%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22footer-copy%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22container%20copy%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%u8054%u7CFB%u65B9%u5F0F%3A%20%u7535%u8BDD%3A%2015640619731%20%7C%20%u90AE%u7BB1%3A%20yuey@gmail.com%20%7C%20%u793E%u4EA4%u5A92%u4F53%u94FE%u63A5%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3E%u5173%u6CE8%u6211%u4EEC%u7684%u793E%u4EA4%u5A92%u4F53%uFF1A%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22https%3A//weibo.com%22%20target%3D%22_blank%22%3E%u5FAE%u4FE1%u516C%u4F17%u53F7%3C/a%3E%20%7C%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22https%3A//v.douyin.com/i69wQo1a/%204@2.com%20%3A1pm%22%20target%3D%22_blank%22%3E%u6296%u97F3%3C/a%3E%20%7C%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22https%3A//www.xiaohongshu.com/user/profile/5f7866be00000000010038e4%3Fxhsshare%3DCopyLink%26appuid%3D62846deb000000002102685a%26apptime%3D1720063874%22%20target%3D%22_blank%22%3E%u5C0F%u7EA2%u4E66%3C/a%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/p%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%3C/footer%3E%0A%20%20%20%20%3Cscript%20src%3D%22path/to/your/js/app.js%22%3E%3C/script%3E%0A%3C/body%3E%0A%0A%3C/html%3E%0A"));
-//-->
-</script>
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>联系我们 - 焕发花蕾计划</title>
+    <meta name="keywords" content="好公益平台,联系我们,公益项目" />
+    <meta name="description" content="通过以下方式联系我们，了解更多关于焕发花蕾计划的信息。" />
+    <link rel="icon" href="pc/团队标志.png">
+    <link rel="stylesheet" href="css/swiper-3.4.1.min.css">
+    <link rel="stylesheet" href="css/style-abed1fd6a7.css">
+    <link rel="stylesheet" href="css/font_832923_hhm2dcj4n4s.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/swiper-3.4.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content-box {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .content-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .logo-box img {
+             width: 740px !important;
+             height: 154px !important}
+
+
+
+        .content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+        }
+
+        .content ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content ul li {
+            margin-bottom: 10px;
+            list-style-type: none;
+        }
+
+        .highlight {
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .highlight:hover {
+            text-decoration: underline;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .page-content {
+            padding: 40px 20px;
+            background-color: #fff;
+            margin: 20px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-copy {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-copy a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .footer-copy a:hover {
+            text-decoration: underline;
+        }
+
+        .header-box {
+            padding: 20px 0;
+        }
+
+
+
+        .nav ul.menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav ul.menu li {
+            margin-right: 20px;
+        }
+
+        .nav ul.menu li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .nav ul.menu li a:hover {
+            color: #007bff;
+        }
+
+        .nav ul.menu li.active a {
+            color: #007bff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- 头部 -->
+        <header>
+            <div class="container header-box">
+                <div class="logo-box">
+                    <a href="project.html">
+                        <img src="pc/计划.png" alt="焕发花蕾计划" >
+                    </a>
+                </div>
+                <div class="right-menu">
+                    <div class="form-top-box">
+                        <div class="search"></div>
+                        <div><a href="#/home/english/index.html"></a></div>
+                    </div>
+                    <div class="nav">
+                        <ul class="menu">
+                            <li class="menu-item "><a href="index.html">首页</a></li>
+                            <li class="menu-item "><a href="project.html">项目</a></li>
+                            <li class="menu-item "><a href="partner.html">我们的伙伴</a></li>
+                            
+                            <li class="menu-item ">
+                                <a href="#/home/partner/publicOrg/id/1.html">志愿者</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="about volunteer.html">关于志愿者</a></li>
+                                    <li><a href="become volunteer.html">成为志愿者</a></li>
+                                </ul>
+                                </li>
+
+                            <li class="menu-item active current">
+                                <a href="#/home/about/index.html">关于我们</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="Platform.html">平台简介</a></li>
+                                    <li><a href="contact.html">联系我们</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <script>
+            $('.menu-item').on('mouseover', function () {
+                $(this).children('.dropdown-menu').stop().fadeIn();
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+            $('.menu-item').on('mouseleave', function () {
+                $(this).children('.dropdown-menu').stop().fadeOut();
+                $(this).removeClass('active').siblings().removeClass('active');
+            });
+            $('.to-search').on('click', function () {
+                var keyword = $('input[type=search]').val();
+                location.href = "/home/search/index.html?keyword=" + keyword;
+            });
+            $('#toSearch').keydown(function (event) {
+                if (event.keyCode == 13) {
+                    var keyword = $('input[type=search]').val();
+                    location.href = "/home/search/index.html?keyword=" + keyword;
+                }
+            });
+        </script>
+        <!-- /头部 -->
+
+        <!-- 主体 -->
+        <div class="page-content">
+            <div class="container">
+                <div class="content-box">
+                    <h1>联系我们</h1>
+                    <div class="content">
+                        <p>如果您对我们的项目有任何疑问或建议，欢迎通过以下方式联系我们。我们期待与您的交流与合作。</p>
+                    </div>
+                    <h2>联系方式</h2>
+                    <div class="content">
+                        <ul>
+                            <li><strong>电话：</strong>1564061931</li>
+                            <li><strong>邮箱：</strong><a href="mailto:yuey@gmail.com">yuey@gmail.com</a></li>
+                            <li><strong>地址：</strong>锦州市松山新区科技路19号</li>
+                        </ul>
+                    </div>
+                    <h2>社交媒体</h2>
+                    <div class="content">
+                        <p>关注我们的社交媒体，了解最新动态：</p>
+                        <ul>
+                            <li><a href="#" class="highlight">微信公众号</a></li>
+                            <li><a href="https://v.douyin.com/i69wQo1a/ 4@2.com :1pm" class="highlight">抖音</a></li>
+                            <li><a href="https://www.xiaohongshu.com/user/profile/5f7866be00000000010038e4?xhsshare=CopyLink&appuid=62846deb000000002102685a&apptime=1720063874" class="highlight">小红书</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /主体 -->
+    </div>
+    <!-- 底部 -->
+    <footer>
+        <div>
+            <img src="pc/222.png" alt="锦州市妇联">
+        </div>
+        <div class="footer-copy">
+            <div class="container copy">
+                联系方式: 电话: 15640619731 | 邮箱: yuey@gmail.com | 社交媒体链接
+                <p>关注我们的社交媒体： 
+                    <a href="https://weibo.com" target="_blank">微信公众号</a> | 
+                    <a href="https://v.douyin.com/i69wQo1a/ 4@2.com :1pm" target="_blank">抖音</a> | 
+                    <a href="https://www.xiaohongshu.com/user/profile/5f7866be00000000010038e4?xhsshare=CopyLink&appuid=62846deb000000002102685a&apptime=1720063874" target="_blank">小红书</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="path/to/your/js/app.js"></script>
+</body>
+
+</html>

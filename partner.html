@@ -1,5 +1,210 @@
-<script>
-<!--
-document.write(unescape("%3C%21doctype%20html%3E%0A%3Chtml%3E%0A%0A%3Chead%3E%0A%20%20%20%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%20%20%20%3Cmeta%20http-equiv%3D%22X-UA-Compatible%22%20content%3D%22IE%3Dedge%22%3E%0A%20%20%20%20%3Cmeta%20name%3D%22renderer%22%20content%3D%22webkit%22%3E%0A%20%20%20%20%3Ctitle%3E%u7115%u53D1%u82B1%u857E%u8BA1%u5212%20-%20%u5408%u4F5C%u4F19%u4F34%3C/title%3E%0A%20%20%20%20%3Cmeta%20name%3D%22keywords%22%20content%3D%22%22%20/%3E%0A%20%20%20%20%3Cmeta%20name%3D%22description%22%20content%3D%22%22%20/%3E%0A%20%20%20%20%3Clink%20rel%3D%22icon%22%20href%3D%22pc/%u56E2%u961F%u6807%u5FD7.png%22%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22css/swiper-3.4.1.min.css%22%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22css/style-abed1fd6a7.css%22%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22css/font_832923_hhm2dcj4n4s.css%22%3E%0A%20%20%20%20%3Cscript%20src%3D%22js/jquery.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22js/swiper-3.4.1.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22js/common.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cmeta%20name%3D%22__hash__%22%20content%3D%226666cd76f96956469e7be39d750cc7d9_6cedf3925aa65bc9571a904a79d1f328%22%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20%20%20.partner-card%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%201px%20solid%20%23ddd%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%2010px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20overflow%3A%20hidden%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20box-shadow%3A%200%202px%205px%20rgba%280%2C%200%2C%200%2C%200.1%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20transition%3A%20transform%200.3s%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20300px%3B%20/*%20%u56FA%u5B9A%u5BBD%u5EA6%20*/%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.partner-card%3Ahover%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20transform%3A%20scale%281.05%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.partner-card%20img%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20height%3A%20424px%3B%20/*%20A4%u6BD4%u4F8B%u9AD8%u5EA6%20*/%0A%20%20%20%20%20%20%20%20%20%20%20%20object-fit%3A%20cover%3B%20/*%20%u4FDD%u6301%u56FE%u50CF%u6BD4%u4F8B%u88C1%u526A%20*/%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.partner-card%20.content%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.partner-card%20.title%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%201.5em%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20margin-bottom%3A%2010px%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.partner-card%20.desc%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%201em%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20%23555%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.partners-container%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20flex-wrap%3A%20wrap%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20justify-content%3A%20center%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.footer-copy%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20flex-direction%3A%20column%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20align-items%3A%20center%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2020px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20%23f8f8f8%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%3C/style%3E%0A%3C/head%3E%0A%0A%3Cbody%3E%0A%20%20%20%20%3Cdiv%20class%3D%22page-container%22%3E%0A%20%20%20%20%20%20%20%20%3C%21--%20%u5934%u90E8%20--%3E%0A%20%20%20%20%20%20%20%20%3Cheader%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22container%20header-box%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22logo-box%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22project.html%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22pc/%u8BA1%u5212.png%22%20alt%3D%22%u52A9%u7406%u7559%u5B88%u513F%u7AE5%u81EA%u4FE1%u65B0%u9762%u5BB9%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/a%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22right-menu%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-top-box%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22search%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22%23/home/english/index.html%22%3E%3C/a%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22nav%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cul%20class%3D%22menu%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%20class%3D%22menu-item%20%22%3E%3Ca%20href%3D%22index.html%22%3E%u9996%u9875%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%20class%3D%22menu-item%20%22%3E%3Ca%20href%3D%22project.html%22%3E%u9879%u76EE%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%20class%3D%22menu-item%20active%20current%22%3E%3Ca%20href%3D%22partner.html%22%3E%u6211%u4EEC%u7684%u4F19%u4F34%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%20class%3D%22menu-item%20%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22%23/home/partner/publicOrg/id/1.html%22%3E%u5FD7%u613F%u8005%3C/a%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cul%20class%3D%22dropdown-menu%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Ca%20href%3D%22about%20volunteer.html%22%3E%u5173%u4E8E%u5FD7%u613F%u8005%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Ca%20href%3D%22become%20volunteer.html%22%3E%u6210%u4E3A%u5FD7%u613F%u8005%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%20class%3D%22menu-item%20%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22%23/home/about/index.html%22%3E%u5173%u4E8E%u6211%u4EEC%3C/a%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cul%20class%3D%22dropdown-menu%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Ca%20href%3D%22Platform.html%22%3E%u5E73%u53F0%u7B80%u4ECB%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3E%3Ca%20href%3D%22contact.html%22%3E%u8054%u7CFB%u6211%u4EEC%3C/a%3E%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/ul%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3C/header%3E%0A%20%20%20%20%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%24%28%27.menu-item%27%29.on%28%27mouseover%27%2C%20function%20%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28this%29.children%28%27.dropdown-menu%27%29.stop%28%29.fadeIn%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28this%29.addClass%28%27active%27%29.siblings%28%29.removeClass%28%27active%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%24%28%27.menu-item%27%29.on%28%27mouseleave%27%2C%20function%20%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28this%29.children%28%27.dropdown-menu%27%29.stop%28%29.fadeOut%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%24%28this%29.removeClass%28%27active%27%29.siblings%28%29.removeClass%28%27active%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%24%28%27.to-search%27%29.on%28%27click%27%2C%20function%20%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20keyword%20%3D%20%24%28%27input%5Btype%3Dsearch%5D%27%29.val%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20location.href%20%3D%20%22/home/search/index.html%3Fkeyword%3D%22%20+%20keyword%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%24%28%27%23toSearch%27%29.keydown%28function%20%28event%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28event.keyCode%20%3D%3D%2013%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20keyword%20%3D%20%24%28%27input%5Btype%3Dsearch%5D%27%29.val%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20location.href%20%3D%20%22/home/search/index.html%3Fkeyword%3D%22%20+%20keyword%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%3C/script%3E%0A%20%20%20%20%20%20%20%20%3C%21--%20/%u5934%u90E8%20--%3E%0A%0A%20%20%20%20%20%20%20%20%3C%21--%20%u4E3B%u4F53%20--%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22page-partner-index%20page-partner%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22banner%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22path/to/your/banner.jpg%22%20alt%3D%22%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22page%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22header%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch1%3E%3C/h1%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3E%u611F%u8C22%u4EE5%u4E0B%u673A%u6784%u548C%u4F01%u4E1A%u5BF9%u7115%u53D1%u82B1%u857E%u8BA1%u5212%u7684%u652F%u6301%u548C%u8D21%u732E%u3002%3C/p%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22partners-container%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22partner-card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22pc/%u7F8E%u5316/1.png%22%20alt%3D%22Partner%201%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22content%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22title%22%3E%u9526%u5DDE%u5E02%u5987%u8054%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22desc%22%3E%u5E02%u5987%u8054%u9F0E%u529B%u652F%u6301%u7115%u53D1%u82B1%u857E%u8BA1%u5212%u300B%uFF0C%u613F%u5176%u5982%u6625%u98CE%u5316%u96E8%uFF0C%u6210%u4E3A%u5F18%u626C%u7231%u5FC3%u4E0E%u6E29%u6696%u7684%u7F8E%u597D%u5178%u8303%u3002%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22partner-card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22pc/%u7F8E%u5316/4.png%22%20alt%3D%22Partner%204%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22content%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22title%22%3E%u56E2%u9526%u5DDE%u5E02%u59D4%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22desc%22%3E%u56E2%u9526%u5DDE%u5E02%u59D4%u9F0E%u529B%u652F%u6301%u300A%u7115%u53D1%u82B1%u857E%u8BA1%u5212%u300B%uFF0C%u5E0C%u671B%u4E3A%u7559%u5B88%u513F%u7AE5%u7684%u5065%u5EB7%u6210%u957F%u6CE8%u5165%u6E90%u6E90%u4E0D%u65AD%u7684%u6E29%u6696%u4E0E%u5E0C%u671B%u3002%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22partner-card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22pc/%u7F8E%u5316/2.png%22%20alt%3D%22Partner%202%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22content%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22title%22%3E%u8FBD%u5B81%u9F0E%u521B%u77F3%u5316%u6709%u9650%u516C%u53F8%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22desc%22%3E%u8FBD%u5B81%u9F0E%u521B%u77F3%u5316%u6709%u9650%u516C%u53F8%u613F%u643A%u624B%u201C%u82B1%u9999%u6EE1%u56ED%u201D%u516C%u76CA%u56E2%u961F%uFF0C%u5171%u540C%u64AD%u6492%u7231%u4E0E%u6E29%u6696%uFF0C%u4E3A%u7559%u5B88%u513F%u7AE5%u7EFD%u653E%u81EA%u4FE1%u65B0%u9762%u5BB9%uFF0C%u70B9%u4EAE%u4ED6%u4EEC%u7684%u7F8E%u597D%u672A%u6765%u3002%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22partner-card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22pc/%u7F8E%u5316/3.png%22%20alt%3D%22Partner%203%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22content%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22title%22%3E%u9526%u5DDE%u5965%u65B0%u5C24%u4FE1%u53E3%u8154%u95E8%u8BCA%u6709%u9650%u516C%u53F8%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22desc%22%3E%u9526%u5DDE%u5965%u65B0%u5C24%u4FE1%u53E3%u8154%u95E8%u8BCA%u6709%u9650%u516C%u53F8%u613F%u5168%u529B%u652F%u6301%u300A%u7115%u53D1%u82B1%u857E%u8BA1%u5212%u300B%uFF0C%u901A%u8FC7%u4E13%u4E1A%u53E3%u8154%u516C%u76CA%u8BB2%u5EA7%u52A9%u529B%u7559%u5B88%u513F%u7AE5%u5065%u5EB7%u6210%u957F%uFF0C%u81EA%u4FE1%u7EFD%u653E%u3002%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22partner-card%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22pc/%u7F8E%u5316/5.png%22%20alt%3D%22Partner%205%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22content%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22title%22%3E%u660E%u62D3%u8FDB%u51FA%u53E3%u6709%u9650%u516C%u53F8%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22desc%22%3E%u660E%u62D3%u8FDB%u51FA%u53E3%u6709%u9650%u516C%u53F8%u70ED%u5FF1%u652F%u6301%u7115%u53D1%u82B1%u857E%u8BA1%u5212%u300B%uFF0C%u613F%u4E0E%u56E2%u961F%u643A%u624B%uFF0C%u5171%u540C%u64AD%u6492%u7231%u4E0E%u5E0C%u671B%uFF0C%u4E3A%u7559%u5B88%u513F%u7AE5%u7684%u672A%u6765%u6CE8%u5165%u65E0%u9650%u53EF%u80FD%u3002%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3C%21--%20/%u4E3B%u4F53%20--%3E%0A%20%20%20%20%3C/div%3E%0A%20%20%20%20%3C%21--%20%u5E95%u90E8%20--%3E%0A%20%20%20%20%3Cfooter%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22pc/222.png%22%20alt%3D%22%u9526%u5DDE%u5E02%u5987%u8054%22%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22footer-copy%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22container%20copy%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%u8054%u7CFB%u65B9%u5F0F%3A%20%u7535%u8BDD%3A%2015640619731%20%7C%20%u90AE%u7BB1%3A%20yuey@gmail.com%20%7C%20%u793E%u4EA4%u5A92%u4F53%u94FE%u63A5%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cp%3E%u5173%u6CE8%u6211%u4EEC%u7684%u793E%u4EA4%u5A92%u4F53%uFF1A%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22https%3A//weibo.com%22%20target%3D%22_blank%22%3E%u5FAE%u4FE1%u516C%u4F17%u53F7%3C/a%3E%20%7C%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22https%3A//v.douyin.com/i69wQo1a/%204@2.com%20%3A1pm%22%20target%3D%22_blank%22%3E%u6296%u97F3%3C/a%3E%20%7C%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22https%3A//www.xiaohongshu.com/user/profile/5f7866be00000000010038e4%3Fxhsshare%3DCopyLink%26appuid%3D62846deb000000002102685a%26apptime%3D1720063874%22%20target%3D%22_blank%22%3E%u5C0F%u7EA2%u4E66%3C/a%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/p%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%3C/footer%3E%0A%20%20%20%20%3Cscript%20src%3D%22path/to/your/js/app.js%22%3E%3C/script%3E%0A%3C/body%3E%0A%0A%3C/html%3E%0A"));
-//-->
-</script>
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>焕发花蕾计划 - 合作伙伴</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="icon" href="pc/团队标志.png">
+    <link rel="stylesheet" href="css/swiper-3.4.1.min.css">
+    <link rel="stylesheet" href="css/style-abed1fd6a7.css">
+    <link rel="stylesheet" href="css/font_832923_hhm2dcj4n4s.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/swiper-3.4.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <meta name="__hash__" content="6666cd76f96956469e7be39d750cc7d9_6cedf3925aa65bc9571a904a79d1f328">
+    <style>
+        .partner-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            width: 300px; /* 固定宽度 */
+        }
+
+        .partner-card:hover {
+            transform: scale(1.05);
+        }
+
+        .partner-card img {
+            width: 100%;
+            height: 424px; /* A4比例高度 */
+            object-fit: cover; /* 保持图像比例裁剪 */
+        }
+
+        .partner-card .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .partner-card .title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .partner-card .desc {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .partners-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-copy {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background: #f8f8f8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- 头部 -->
+        <header>
+            <div class="container header-box">
+                <div class="logo-box">
+                    <a href="project.html">
+                        <img src="pc/计划.png" alt="助理留守儿童自信新面容">
+                    </a>
+                </div>
+                <div class="right-menu">
+                    <div class="form-top-box">
+                        <div class="search">
+                        </div>
+                        <div>
+                            <a href="#/home/english/index.html"></a>
+                        </div>
+                    </div>
+                    <div class="nav">
+                        <ul class="menu">
+                            <li class="menu-item "><a href="index.html">首页</a></li>
+                            <li class="menu-item "><a href="project.html">项目</a></li>
+                            <li class="menu-item active current"><a href="partner.html">我们的伙伴</a></li>
+                            
+                            <li class="menu-item ">
+                                <a href="#/home/partner/publicOrg/id/1.html">志愿者</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="about volunteer.html">关于志愿者</a></li>
+                                    <li><a href="become volunteer.html">成为志愿者</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item ">
+                                <a href="#/home/about/index.html">关于我们</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="Platform.html">平台简介</a></li>
+                                    <li><a href="contact.html">联系我们</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <script>
+            $('.menu-item').on('mouseover', function () {
+                $(this).children('.dropdown-menu').stop().fadeIn();
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+            $('.menu-item').on('mouseleave', function () {
+                $(this).children('.dropdown-menu').stop().fadeOut();
+                $(this).removeClass('active').siblings().removeClass('active');
+            });
+            $('.to-search').on('click', function () {
+                var keyword = $('input[type=search]').val();
+                location.href = "/home/search/index.html?keyword=" + keyword;
+            });
+            $('#toSearch').keydown(function (event) {
+                if (event.keyCode == 13) {
+                    var keyword = $('input[type=search]').val();
+                    location.href = "/home/search/index.html?keyword=" + keyword;
+                }
+            });
+        </script>
+        <!-- /头部 -->
+
+        <!-- 主体 -->
+        <div class="page-partner-index page-partner">
+            <div class="banner">
+                <img src="path/to/your/banner.jpg" alt="">
+            </div>
+            <div class="page">
+                <div class="header">
+                    <h1></h1>
+                    <p>感谢以下机构和企业对焕发花蕾计划的支持和贡献。</p>
+                </div>
+                <div class="partners-container">
+                    <div class="partner-card">
+                        <img src="pc/美化/1.png" alt="Partner 1">
+                        <div class="content">
+                            <div class="title">锦州市妇联</div>
+                            <div class="desc">市妇联鼎力支持焕发花蕾计划》，愿其如春风化雨，成为弘扬爱心与温暖的美好典范。</div>
+                        </div>
+                        
+                    </div>
+                                        <div class="partner-card">
+                        <img src="pc/美化/4.png" alt="Partner 4">
+                        <div class="content">
+                            <div class="title">团锦州市委</div>
+                            <div class="desc">团锦州市委鼎力支持《焕发花蕾计划》，希望为留守儿童的健康成长注入源源不断的温暖与希望。</div>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <img src="pc/美化/2.png" alt="Partner 2">
+                        <div class="content">
+                            <div class="title">辽宁鼎创石化有限公司</div>
+                            <div class="desc">辽宁鼎创石化有限公司愿携手“花香满园”公益团队，共同播撒爱与温暖，为留守儿童绽放自信新面容，点亮他们的美好未来。</div>
+                        </div>
+                    </div>
+                    <div class="partner-card">
+                        <img src="pc/美化/3.png" alt="Partner 3">
+                        <div class="content">
+                            <div class="title">锦州奥新尤信口腔门诊有限公司</div>
+                            <div class="desc">锦州奥新尤信口腔门诊有限公司愿全力支持《焕发花蕾计划》，通过专业口腔公益讲座助力留守儿童健康成长，自信绽放。</div>
+                        </div>
+                    </div>
+
+                    <div class="partner-card">
+                        <img src="pc/美化/5.png" alt="Partner 5">
+                        <div class="content">
+                            <div class="title">明拓进出口有限公司</div>
+                            <div class="desc">明拓进出口有限公司热忱支持焕发花蕾计划》，愿与团队携手，共同播撒爱与希望，为留守儿童的未来注入无限可能。</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- /主体 -->
+    </div>
+    <!-- 底部 -->
+    <footer>
+        <div>
+            <img src="pc/222.png" alt="锦州市妇联">
+        </div>
+        <div class="footer-copy">
+            <div class="container copy">
+                联系方式: 电话: 15640619731 | 邮箱: yuey@gmail.com | 社交媒体链接
+                <p>关注我们的社交媒体： 
+                    <a href="https://weibo.com" target="_blank">微信公众号</a> | 
+                    <a href="https://v.douyin.com/i69wQo1a/ 4@2.com :1pm" target="_blank">抖音</a> | 
+                    <a href="https://www.xiaohongshu.com/user/profile/5f7866be00000000010038e4?xhsshare=CopyLink&appuid=62846deb000000002102685a&apptime=1720063874" target="_blank">小红书</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="path/to/your/js/app.js"></script>
+</body>
+
+</html>
