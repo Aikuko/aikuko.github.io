@@ -1,0 +1,214 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.header-box {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.logo-box img {
+    height: 50px;
+}
+
+.right-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-top-box {
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    position: relative;
+}
+
+.search input {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+.search .to-search {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav .menu-item {
+    position: relative;
+    padding: 10px 15px;
+}
+
+.nav .menu-item a {
+    color: #333;
+    font-weight: bold;
+}
+
+.nav .menu-item:hover .dropdown-menu {
+    display: block;
+}
+
+.nav .menu-item .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.nav .menu-item .dropdown-menu li {
+    padding: 5px 15px;
+}
+
+.nav .menu-item .dropdown-menu li a {
+    color: #333;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.page {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px 0;
+}
+
+.desc-card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.desc-card .card-item {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.desc-card .card-item .circle-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.desc-card .card-item .info .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.desc-card .card-item .info .desc {
+    font-size: 16px;
+}
+
+.partner-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.partner-list .partner-item {
+    flex: 1 1 30%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.partner-list .partner-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer .container .contact {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer .container .contact h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer .container .contact .link {
+    margin-bottom: 10px;
+}
+
+.footer .container .contact-info {
+    margin-bottom: 20px;
+}
+
+.footer-copy {
+    background-color: #222;
+    color: #bbb;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-copy .filing {
+    margin-top: 10px;
+}
+
+.footer-copy .filing a {
+    color: #bbb;
+    margin: 0 5px;
+}
+
+.footer-copy .filing img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
